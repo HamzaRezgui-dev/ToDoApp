@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #151a30;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*  ToDoPage  */
+
+.todo {
+  margin: auto;
+  width: 400px;
+  /*max-height: 600px;*/
+  /*overflow-y: hidden;*/
+}
+
+.title {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+/*.taskes {
+  height: 600px;
+  overflow-y: scroll;
+}*/
+
+.form input,
+button {
+  color: white;
+  font-size: 20px;
+  outline: none;
+}
+
+.form input {
+  padding: 20px;
+  background-color: transparent;
+
+  width: 80%;
+  margin: 0px;
+}
+
+.form button {
+  width: 20%;
+  margin: 0px;
+  padding: 20px 0px;
+}
+
+.colors {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+.color {
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 0px 10px;
+  transition: all 0.2s;
+}
+
+.color:hover {
+  transform: scale(0.8) rotate(-90deg);
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 8px;
+  background-color: white;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* task Component  */
+.task {
+  padding: 20px 20px;
+  margin: 5px 0px;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+colors : "#22d5fe", "#f46918", "#593bab", "#ff13e1", "#b9ff00"
+*/

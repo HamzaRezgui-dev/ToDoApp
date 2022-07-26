@@ -1,0 +1,88 @@
+.main{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.507);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_container{
+    width: 470px;
+    background-color: #151a30;
+    position: relative;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+.title{
+    margin: 0px;
+    padding: 0px;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* form css styling */
+
+.form input,
+button, select,textarea {
+  color: white;
+  font-size: 20px;
+  outline: none;
+}
+
+.form input, select,textarea {
+  padding: 20px;
+  background-color: transparent;
+
+  width: 100%;
+  margin: 0px;
+  margin: 10px 0px;
+}
+
+.form select option{
+    background-color: #151a30;
+    color: white;
+}
+
+
+
+.create_button{
+    width: 100%;
+    margin: 0px;
+    padding: 20px 0px;
+    color: white;
+    font-size: 20px;
+    outline: none;
+    margin: 10px 0px;
+    border: 0px;
+}
+
+
+
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 40px;
+    color: white !important;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.close:hover{
+    transform: scale(1.05);
+}

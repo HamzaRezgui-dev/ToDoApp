@@ -10,3 +10,6 @@ const logger = createLogger({
 });
 
 module.exports = logger;
+
+//docker file front back / ignore nodemodules
+//docker file ignore node modules

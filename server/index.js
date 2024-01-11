@@ -1,21 +1,24 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-require('dotenv').config()
+require("dotenv").config();
+const app = express();
+const corsOptions = {
+  origin: "*",
+  "Access-Control-Allow-Origin": "*",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Content-Type, Authorization",
+};
 
-const app = express()
-
-app.use(cors({origin: "*"}))
-app.use(express.json())
+app.use(cors(corsOptions));
+app.options("*", cors());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 const connectDB = require("./config/Mongo.Config");
 
 connectDB();
 
 app.use("/api/task", require("./routes/todo.routes"));
 
-
-app.listen(process.env.PORT || 8080, () => {
-    console.log(process.env.PORT);
-  });
+app.listen(process.env.PORT || 9000, () => {
+  console.log(process.env.PORT);
+});

@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  # MongoDB service
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - my-network
+
+  # Node.js backend service
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.backend
+    container_name: backend
+    ports:
+      - "9000:9000"
+    environment:
+      MONGODB_URI: "mongodb://mongodb:27017/db"
+    depends_on:
+      - mongodb
+    networks:
+      - my-network
+
+  # React.js frontend service
+  frontend:
+    build:
+      context: ./todoapp
+      dockerfile: Dockerfile.frontend
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - my-network
+
+  # Nginx reverse proxy
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./todoapp/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
